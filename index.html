@@ -1,0 +1,102 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Dspace requests</title>
+	</head>
+
+	<body>
+
+		<form method="get" action="php/getItems.php">
+        <input type="submit" name="btn_getItems" value="Consultar items">
+    </form>
+
+    <br/>
+
+		<form method="post" action="php/postItem.php" enctype="multipart/form-data">
+				<table border="1">
+						<tr>
+								<td>dc.creator: </td>
+								<td><input name="dcCreator" type="text"/></td>
+						</tr>
+						<tr>
+								<td>dc.title: </td>
+								<td><input name="dcTitle" type="text"/></td>
+						</tr>
+						<tr>
+								<td>dc.date in YYYY-MM-DD: </td>
+								<td><input name="dcDate" type="text"/></td>
+						</tr>
+						<tr>
+								<td>UUID de la Colección: </td>
+								<td><input name="collectionID" type="text"/></td>
+						</tr>
+				</table>
+				<input type="submit" name="btn_postItem" value="Subir item">
+		</form>
+
+		<br/>
+
+		<form method="post" action="php/postBitstreamToItem.php" enctype="multipart/form-data">
+        <table border="1">
+					<tr>
+							<td>UUID del Item: </td>
+							<td><input name="itemID" type="text"/></td>
+					</tr>
+					<tr>
+							<td>Descripción del Item (Sin espacios): </td>
+							<td><input name="description" type="text"/></td>
+					</tr>
+					<tr>
+							<td>Nombre del archivo: </td>
+							<td><input name="filename" type="text"/></td>
+					</tr>
+					<tr>
+							<td>Path del archivo: </td>
+							<td><input name="filepath" type="text"/></td>
+					</tr>
+        </table>
+        <input type="submit" name="btn_postBitstreamToItem" value="Subir archivo">
+    </form>
+
+		<br/>
+
+    <form method="post" action="php/postBitstreamHTML.php" enctype="multipart/form-data">
+        <table border="1">
+					<tr>
+							<td>UUID del Item: </td>
+							<td><input name="itemID" type="text"/></td>
+					</tr>
+					<tr>
+							<td>Descripción del Item (Sin espacios): </td>
+							<td><input name="description" type="text"/></td>
+					</tr>
+          <tr>
+              <td>Archivo: </td>
+              <td><input name="fileToUpload" type="file"/></td>
+          </tr>
+        </table>
+        <input type="submit" name="btn_postBitstreamHTML" value="Subir archivo">
+    </form>
+
+    <br/>
+
+		<form method="post" action="php/deleteItem.php">
+			<table border="1">
+				<tr>
+						<td>UUID del Item: </td>
+						<td><input name="itemID" type="text"/></td>
+				</tr>
+			</table>
+			<input type="submit" name="btn_deleteItem" value="Eliminar item">
+    </form>
+
+    <br/>
+
+    <form method="post" action="php/deleteItems.php">
+        <input type="submit" name="btn_deleteItems" value="Eliminar todos los items de Dspace">
+    </form>
+
+    <br/>
+
+	</body>
+</html>
